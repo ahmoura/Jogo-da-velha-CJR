@@ -78,7 +78,6 @@ function vitoria() {
         }
         ganhou = 1;
     }
-
     if (ganhou == 1) {
         resetar();
     }
