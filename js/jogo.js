@@ -117,21 +117,21 @@ function jogada(id) {
 
 
 
-/* Contador de vitorias.*/
-let win_count = 0;
-/* Contador de derrotas. */
-let lose_count = 0;
+/* Contador de pontos de X.*/
+let x_count = 0;
+/* Contador de pontos de O. */
+let o_count = 0;
 
 /* Funcao para incrementar vitorias ou derrotas. */
 function incrementa_vitoria(quem_ganhou) {
     if(quem_ganhou==1){
-        win_count++;
-        document.getElementById("conta_vitorias").innerHTML = win_count;
+        x_count++;
+        document.getElementById("conta_x").innerHTML = x_count;
         alert("X ganhou!");
     }
     else if(quem_ganhou==0){
-        lose_count++;
-        document.getElementById("conta_derrotas").innerHTML = lose_count;
+        o_count++;
+        document.getElementById("conta_y").innerHTML = o_count;
         alert("O ganhou!");
     }
 }
