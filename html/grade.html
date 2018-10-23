@@ -11,7 +11,17 @@
 </head>
 
 <body>
-    <div class="d-flex flex-column container fcontainer">
+
+    <div class="d-flex flex-column justify-content-center flex-wrap align-content-center">
+
+        <div class="d-flex justify-content-center">
+            <button type="button" class="btn btn-primary botao_game" onclick="single_game()">Singleplayer</button>
+            <button type="button" class="btn btn-danger botao_game" onclick="mult_game()">Multiplayer</button>
+        </div>
+    </div>
+
+
+    <div class="d-flex flex-column container fcontainer" id="grade">
         <div class="d-flex flex-row justify-content-center topline">
             <div class="d-flex justify-content-center align-content-center flex-wrap cel" id="a1" onclick="jogada(this.id)"></div>
             <div class="d-flex justify-content-center align-content-center flex-wrap cel cel_horizontal" id="a2"
@@ -32,12 +42,15 @@
             <div class="d-flex justify-content-center align-content-center flex-wrap cel" id="c3" onclick="jogada(this.id)"></div>
         </div>
         <div class="d-flex flex-row justify-content-center div_reiniciar">
-            <input class="btn btn-info botao_reiniciar" type="reset" value="Reiniciar" onclick="resetar()">
+            <input class="btn btn-info botao_game" type="reset" value="Reiniciar" onclick="resetar()">
+            <input class="btn btn-info botao_game" type="reset" value="Sair" onclick="sair()">
         </div>
     </div>
 
 </body>
 
+
 <script src="../js/jogo.js"></script>
+<script src="../js/menu.js"></script>
 
 </html>
