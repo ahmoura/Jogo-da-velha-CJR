@@ -11,3 +11,7 @@ function mult_game() {
 function op_grade() {
     // document.getElementById("grade").style.display = 'flex';
 }
+
+function sair(){
+    
+}
