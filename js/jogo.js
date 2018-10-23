@@ -3,12 +3,9 @@ let campo = [9];
 let id_vec = ["a1", "a2", "a3", "b1", "b2", "b3", "c1", "c2", "c3"];
 let ganhou = 0;
 let jogadas = 0;
-let bote = 1;
-var array2 = [1, 2];
-var array;
+let bot_flag = 1; //Flag pra indicar se o bot esta ativo
+let jogadas_arr = shuffle([0, 1, 2, 3, 4, 5, 6, 7, 8]); //Array de jogadas disponiveis pro bot
 resetar();
-bot();
-shuffle(array);
 
 function vitoria() {
     if ((campo[0] == campo[1]) && (campo[1] == campo[2]) && (campo[0] != 0)) {
@@ -69,10 +66,10 @@ function vitoria() {
         ganhou = 1;
     }
     if (ganhou == 1) {
-        resetar();
+        return resetar();
     } else if (jogadas == 9) {
         alert("Deu velha!");
-        resetar();
+         return resetar();
     }
 }
 
@@ -84,38 +81,38 @@ function resetar() {
     turno = 1;
     ganhou = 0;
     jogadas = 0;
+    return 1;
 }
 
 function jogada(id) {
     if (campo[id_vec.indexOf(id)] == 0) {
         if (turno == 1) {
             document.getElementById(id).style.backgroundImage = "url('../img/x.png')";
-        } else {
-            if (bote == 1) {
-                if (jogadas == 0) {
-                    console.log(shuffle([0, 1, 2, 3, 4, 5, 6, 7, 8]));
-                    bot(array2);
-                } else {
-                    bot(array2);
+            campo[id_vec.indexOf(id)] = turno;
+            turno = turno * (-1);
+            jogadas++;
+            if(vitoria()){
+                return;
+            }
+            if (bot_flag == 1){
+                while(campo[jogadas_arr[0]] != 0) {
+                    jogadas_arr = shuffle(jogadas_arr);
                 }
-            } else {
-                document.getElementById(id).style.backgroundImage = "url('../img/o.png')";
+                jogada(id_vec[jogadas_arr[0]]);
             }
         }
-        campo[id_vec.indexOf(id)] = turno;
-        turno = turno * (-1);
-        jogadas++;
-        vitoria();
+        else {
+            document.getElementById(id).style.backgroundImage = "url('../img/o.png')";
+            campo[id_vec.indexOf(id)] = turno;
+            turno = turno * (-1);
+            jogadas++;
+            vitoria();
+        }
     }
-}
+}   
 
-function bot(array2) {
-    //document.getElementById(id_vec[array2[i]]).style.backgroundImage = "url('../img/o.png')";
-    //i++;
-}
-
-function shuffle(array) {
-    var i = array.length,
+function shuffle(arr) {
+    var i = arr.length,
         j = 0,
         temp;
 
@@ -123,12 +120,12 @@ function shuffle(array) {
 
         j = Math.floor(Math.random() * (i + 1));
 
-        temp = array[i];
-        array[i] = array[j];
-        array[j] = temp;
+        temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
 
     }
 
-    return array;
+    return arr;
 }
 console.log("teste");
