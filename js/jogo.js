@@ -5,6 +5,33 @@ let ganhou = 0;
 let jogadas = 0;
 resetar();
 
+/* Funcoes do menu:
+    single_game: inicia o jogo contra o bot
+    mult_game: inicia um jogo de dois
+    op_grade: some o menu e aparece o jogo
+    sair: some o jogo e aparece o menu */
+
+function single_game() {
+    bot_flag = 1;
+    op_grade();
+}
+
+function mult_game() {
+    bot_flag = 0;
+    op_grade();
+}
+
+function op_grade() {
+    document.getElementById("grade").style.display = 'flex';
+    document.getElementById("menu").style.display = 'none';
+}
+
+function sair(){
+    document.getElementById("grade").style.display = 'none';
+    document.getElementById("menu").style.display = 'flex';
+}
+/************************************************/
+
 function vitoria() {
     if ((campo[0] == campo[1]) && (campo[1] == campo[2]) && (campo[0] != 0)) {
         if (campo[0] == 1) {

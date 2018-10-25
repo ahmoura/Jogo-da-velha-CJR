@@ -49,12 +49,22 @@ body{
     margin: 1vh;
 }
 
-.menu_container{
-    width: 50vw;
-    height: 20vh;
-    border: solid 3px #FAFAFA;
+.menu-box{
+    display: flex;
+
 }
 
-.menu_container h1{
-    font-size: 7vh;
+#grade {
+    display: none;
+}
+
+#menu {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#menu p {
+    font-size: 5em;
 }
