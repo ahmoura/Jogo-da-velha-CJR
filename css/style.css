@@ -12,7 +12,7 @@ body{
 .fcontainer{    
     width: 100%;
     max-height: 100%;
-    margin: 4vh;
+    margin:  0 10vh;
 }
 
 .cel{
@@ -67,4 +67,25 @@ body{
 
 #menu p {
     font-size: 5em;
+}
+
+.placar-X{
+    text-align: center;
+    background-color: #0872F1;
+    border-radius: 5px;
+    width: 25vh;
+    margin: 1vh;
+    height: 2.5em;
+    line-height: 2.5em;
+    color: white;
+}
+.placar-O{
+    text-align: center;
+    background-color: #CB3048;
+    border-radius: 5px;
+    width: 25vh;
+    margin: 1vh;
+    height: 2.5em;
+    line-height: 2.5em;
+    color: white;
 }
