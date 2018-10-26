@@ -16,7 +16,6 @@ let jogadas = 0;
 
 let bot_flag = 1;   //Flag pra indicar se o bot esta ativo
 let jogadas_arr = shuffle([0, 1, 2, 3, 4, 5, 6, 7, 8]); //Array de jogadas disponiveis pro bot
-resetar();
 
 /* Funcoes basicas do jogo:
     vitoria: confere todos os estados em que o jogo acabou e decide se alguem ganhou;
@@ -198,6 +197,7 @@ function op_grade() {
 }
 
 function sair() {
+    resetar();
     document.getElementById("grade").style.display = 'none';
     document.getElementById("menu").style.display = 'flex';
 
