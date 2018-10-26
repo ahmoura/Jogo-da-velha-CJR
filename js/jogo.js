@@ -3,7 +3,7 @@ let campo = [9];
 let id_vec = ["a1", "a2", "a3", "b1", "b2", "b3", "c1", "c2", "c3"];
 let ganhou = 0;
 let jogadas = 0;
-let bot_flag = 2; //Flag pra indicar se o bot esta ativo
+let bot_flag = 1; //Flag pra indicar se o bot esta ativo
 let jogadas_arr = shuffle([0, 1, 2, 3, 4, 5, 6, 7, 8]); //Array de jogadas disponiveis pro bot
 resetar();
 
@@ -100,98 +100,6 @@ function jogada(id) {
                 }
                 jogada(id_vec[jogadas_arr[0]]);
             }
-            if (bot_flag == 2) {
-                if (campo[0] == 1 && campo[1] == 1 && campo[2] == 0) {
-                    console.log("tenis");
-                    document.getElementById(id_vec[2]).style.backgroundImage = "url('../img/o.png')";
-                    campo[id_vec.indexOf(id)] = turno;
-                    turno = turno * (-1);
-                    jogadas++;
-                }
-                if (campo[1] == 1 && campo[2] == 1 && campo[0] == 0) {
-                    console.log("tenis");
-                    document.getElementById(id_vec[0]).style.backgroundImage = "url('../img/o.png')";
-                    campo[id_vec.indexOf(id)] = turno;
-                    turno = turno * (-1);
-                    jogadas++;
-                }
-                if (campo[3] == 1 && campo[4] == 1 && campo[5] == 0) {
-                    console.log("tenis");
-                    document.getElementById(id_vec[5]).style.backgroundImage = "url('../img/o.png')";
-                    campo[id_vec.indexOf(id)] = turno;
-                    turno = turno * (-1);
-                    jogadas++;
-                }
-                if (campo[4] == 1 && campo[5] == 1 && campo[3] == 0) {
-                    console.log("tenis");
-                    document.getElementById(id_vec[3]).style.backgroundImage = "url('../img/o.png')";
-                    campo[id_vec.indexOf(id)] = turno;
-                    turno = turno * (-1);
-                    jogadas++;
-                }
-                if (campo[6] == 1 && campo[7] == 1 && campo[8] == 0) {
-                    console.log("tenis");
-                    document.getElementById(id_vec[8]).style.backgroundImage = "url('../img/o.png')";
-                    campo[id_vec.indexOf(id)] = turno;
-                    turno = turno * (-1);
-                    jogadas++;
-                }
-                if (campo[7] == 1 && campo[8] == 6 && campo[6] == 0) {
-                    console.log("tenis");
-                    document.getElementById(id_vec[6]).style.backgroundImage = "url('../img/o.png')";
-                    campo[id_vec.indexOf(id)] = turno;
-                    turno = turno * (-1);
-                    jogadas++;
-                }
-                if (campo[0] == 1 && campo[3] == 1 && campo[6] == 0) {
-                    console.log("tenis");
-                    document.getElementById(id_vec[6]).style.backgroundImage = "url('../img/o.png')";
-                    campo[id_vec.indexOf(id)] = turno;
-                    turno = turno * (-1);
-                    jogadas++;
-                }
-                if (campo[1] == 1 && campo[4] == 1 && campo[7] != -1) {
-                    console.log("tenis");
-                    document.getElementById(id_vec[7]).style.backgroundImage = "url('../img/o.png')";
-                    campo[id_vec.indexOf(id)] = turno;
-                    turno = turno * (-1);
-                    jogadas++;
-                }
-                if (campo[2] == 1 && campo[5] == 1 && campo[8] == 0) {
-                    console.log("tenis");
-                    document.getElementById(id_vec[8]).style.backgroundImage = "url('../img/o.png')";
-                    campo[id_vec.indexOf(id)] = turno;
-                    turno = turno * (-1);
-                    jogadas++;
-                }
-                if (campo[3] == 1 && campo[6] == 1 && campo[0] == 0) {
-                    console.log("tenis");
-                    document.getElementById(id_vec[0]).style.backgroundImage = "url('../img/o.png')";
-                    campo[id_vec.indexOf(id)] = turno;
-                    turno = turno * (-1);
-                    jogadas++;
-                }
-                if (campo[4] == 1 && campo[7] == 1 && campo[1] == 0) {
-                    console.log("tenis");
-                    document.getElementById(id_vec[1]).style.backgroundImage = "url('../img/o.png')";
-                    campo[id_vec.indexOf(id)] = turno;
-                    turno = turno * (-1);
-                    jogadas++;
-                }
-                if (campo[5] == 1 && campo[9] == 1 && campo[2] == 0) {
-                    console.log("tenis");
-                    document.getElementById(id_vec[2]).style.backgroundImage = "url('../img/o.png')";
-                    campo[id_vec.indexOf(id)] = turno;
-                    turno = turno * (-1);
-                    jogadas++;
-                } else {
-                    var roll = 0;
-                    while (campo[roll] != 0) {
-                        roll++
-                    }
-                    jogada(id_vec[roll]);
-                }
-            }
         } else {
             document.getElementById(id).style.backgroundImage = "url('../img/o.png')";
             campo[id_vec.indexOf(id)] = turno;
@@ -201,8 +109,6 @@ function jogada(id) {
         }
     }
 }
-
-
 
 function shuffle(arr) {
     var i = arr.length,
@@ -221,4 +127,3 @@ function shuffle(arr) {
 
     return arr;
 }
-console.log("teste");
