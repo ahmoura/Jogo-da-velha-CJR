@@ -1,0 +1,15 @@
+{
+  "name": "jogoelectron",
+  "version": "1.0.0",
+  "description": "Jogo da velha para desktop.",
+  "main": "./js/main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron ."
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "electron": "^3.0.6"
+  }
+}

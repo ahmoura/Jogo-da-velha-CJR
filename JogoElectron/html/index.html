@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Jogo da velha</title>
+    <link type="text/css" rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+</head>
+
+<body>
+
+    <div class="flex-column justify-content-center flex-wrap align-content-center" id="menu">
+        <p>Jogo da velha</p>
+        <div class="d-flex justify-content-center">
+            <button type="button" class="btn btn-primary botao_game" onclick="single_game()">Singleplayer</button>
+            <button type="button" class="btn btn-danger botao_game" onclick="mult_game()">Multiplayer</button>
+        </div>
+    </div>
+
+
+    <div class="flex-column container fcontainer" id="grade">
+        <div class="d-flex flex-column container fcontainer">
+            <div class="d-flex justify-content-center">
+                <div class="placar-X">Pontos de X: <span id="conta_x">0</span></div>
+                <div class="placar-O">Pontos de Y: <span id="conta_y">0</span></div>
+            </div>
+            <div class="d-flex flex-row justify-content-center topline">
+                <div class="d-flex justify-content-center align-content-center flex-wrap cel" id="a1" onclick="jogada(this.id)"></div>
+                <div class="d-flex justify-content-center align-content-center flex-wrap cel cel_horizontal" id="a2"
+                    onclick="jogada(this.id)"></div>
+                <div class="d-flex justify-content-center align-content-center flex-wrap cel" id="a3" onclick="jogada(this.id)"></div>
+            </div>
+
+            <div class="d-flex flex-row justify-content-center midline">
+                <div class="d-flex justify-content-center align-content-center flex-wrap cel cel_vertical" id="b1"
+                    onclick="jogada(this.id)"></div>
+                <div class="d-flex justify-content-center align-content-center flex-wrap cel cel_centro" id="b2"
+                    onclick="jogada(this.id)"></div>
+                <div class="d-flex justify-content-center align-content-center flex-wrap cel cel_vertical" id="b3"
+                    onclick="jogada(this.id)"></div>
+            </div>
+
+            <div class="d-flex flex-row justify-content-center midline">
+                <div class="d-flex justify-content-center align-content-center flex-wrap cel" id="c1" onclick="jogada(this.id)"></div>
+                <div class="d-flex justify-content-center align-content-center flex-wrap cel cel_horizontal" id="c2"
+                    onclick="jogada(this.id)"></div>
+                <div class="d-flex justify-content-center align-content-center flex-wrap cel" id="c3" onclick="jogada(this.id)"></div>
+            </div>
+            <div class="d-flex flex-row justify-content-center div_reiniciar">
+                <input class="btn btn-info botao_game" type="reset" value="Reiniciar" onclick="resetar()">
+                <input class="btn btn-info botao_game" type="reset" value="Sair" onclick="sair()">
+            </div>
+        </div>
+
+</body>
+
+
+<script src="../js/main.js"></script>
+<script src="../js/jogo.js"></script>
+
+</html>
