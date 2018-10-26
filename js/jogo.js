@@ -17,34 +17,6 @@ let bot_flag = 1;   //Flag pra indicar se o bot esta ativo
 let jogadas_arr = shuffle([0, 1, 2, 3, 4, 5, 6, 7, 8]); //Array de jogadas disponiveis pro bot
 resetar();
 
-/* Funcoes do menu:
-    single_game: inicia o jogo contra o bot;
-    mult_game: inicia um jogo de dois;
-    op_grade: some o menu e aparece o jogo;
-    sair: some o jogo e aparece o menu. */
-
-function single_game() {
-    bot_flag = 1;
-    op_grade();
-}
-
-function mult_game() {
-    bot_flag = 0;
-    op_grade();
-}
-
-function op_grade() {
-    document.getElementById("grade").style.display = 'flex';
-    document.getElementById("menu").style.display = 'none';
-}
-
-function sair() {
-    document.getElementById("grade").style.display = 'none';
-    document.getElementById("menu").style.display = 'flex';
-}
-/************************************************/
-
-
 /* Funcoes basicas do jogo:
     vitoria: confere todos os estados em que o jogo acabou e decide se alguem ganhou;
     resetar: limpa o tabuleiro e reinicia todas as variaveis para os valores iniciais;
@@ -202,3 +174,36 @@ function incrementa_vitoria(quem_ganhou) {
     }
 }
 /************************************************/
+
+/* Funcoes do menu:
+    single_game: inicia o jogo contra o bot;
+    mult_game: inicia um jogo de dois;
+    op_grade: some o menu e aparece o jogo;
+    sair: some o jogo e aparece o menu. */
+
+    function single_game() {
+        bot_flag = 1;
+        op_grade();
+    }
+    
+    function mult_game() {
+        bot_flag = 0;
+        op_grade();
+    }
+    
+    function op_grade() {
+        document.getElementById("grade").style.display = 'flex';
+        document.getElementById("menu").style.display = 'none';
+    }
+    
+    function sair() {
+        document.getElementById("grade").style.display = 'none';
+        document.getElementById("menu").style.display = 'flex';
+        
+        /* Reinicia o placar.*/
+        x_count = 0;
+        o_count = 0;
+        document.getElementById("conta_x").innerHTML = 0;
+        document.getElementById("conta_o").innerHTML = 0;
+    }
+    /************************************************/    
